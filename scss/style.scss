@@ -1,0 +1,135 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   border: none;
+}
+
+.todo-list {
+   background: url(../img/bg.jpg) no-repeat fixed;
+   background-size: cover;
+   width: 100vw;
+   min-height: 100vh;
+
+   &__title {
+      font-family: "Concert One", cursive;
+      font-size: 48px;
+      top: 0;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      padding: 25px 0 25px;
+   }
+
+   &__add {
+      width: 250px;
+      height: 250px;
+      background-color: #ff96d0;
+      opacity: 0.9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      button {
+         width: 70px;
+         height: 70px;
+         border-radius: 50%;
+         background-color: rgba(255, 255, 255, 0.356);
+         cursor: pointer;
+         transition: 0.2s;
+         position: relative;
+
+         &:hover {
+            transform: scale(1.1);
+         }
+
+         &::before,
+         &::after {
+            content: "";
+            background-color: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+         }
+
+         &::before {
+            width: 50%;
+            height: 3px;
+         }
+
+         &::after {
+            width: 3px;
+            height: 50%;
+         }
+      }
+   }
+
+   &__todo {
+      font-family: "Lobster", cursive;
+      font-size: 20px;
+      width: 250px;
+      height: 250px;
+      padding: 25px 15px 15px;
+      position: relative;
+      display: inline-block;
+
+      svg {
+         width: 30px;
+         height: 75px;
+         position: absolute;
+         cursor: pointer;
+         top: 0;
+         left: 50%;
+         transform: translate(-50%, -50%);
+      }
+
+      label {
+         cursor: pointer;
+      }
+
+      textarea {
+         width: 100%;
+         height: auto;
+         margin-top: 5px;
+         max-height: calc(100% - 40px);
+         background-color: inherit;
+         font-size: inherit;
+         font-family: "Noticia Text", serif;
+         resize: none;
+         outline: none;
+      }
+   }
+}
+
+.list-container {
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+   row-gap: 25px;
+   column-gap: 25px;
+}
+
+//['#f0f37e', '#ff96d0', '#d7e84d', '#00c7e4', '#f6dcc9', '#ffc900']
+.todo:nth-child(6n-4) {
+   background-color: #f0f37e;
+}
+.todo:nth-child(6n-3) {
+   background-color: #ff96d0;
+}
+.todo:nth-child(6n-2) {
+   background-color: #00c7e4;
+}
+.todo:nth-child(6n-1) {
+   background-color: #d7e84d;
+}
+.todo:nth-child(6n) {
+   background-color: #f6dcc9;
+}
+.todo:nth-child(6n + 1) {
+   background-color: #ffc900;
+}
+
+.done {
+   background-color: gray;
+}
